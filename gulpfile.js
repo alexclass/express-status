@@ -14,14 +14,18 @@
         paths = {
             src: ['./index.js', './statusCodes.js'],
             unit: ['test/**/*.js'],
-            lcov:['reports/coverage.lcov']
+            lcov: ['reports/coverage.lcov']
         };
+
+    //gulp.task('exit', function () {
+    //    streamProcessors.push(exit());
+    //});
 
     gulp.task('src', function () {
         streamProcessors = [gulp.src(paths.src)];
     });
 
-    gulp.task('lcov', function(){
+    gulp.task('lcov', function () {
         streamProcessors = [gulp.src(paths.lcov)];
     });
 
@@ -31,21 +35,38 @@
 
     gulp.task('process', function () {
         var stream = streamProcessors.shift();
-        streamProcessors.push(exit());
         return streamProcessors.reduce(function (stream, processor) {
             return stream.pipe(processor);
         }, stream);
     });
 
     gulp.task('coveralls', function () {
-        streamProcessors.push(coveralls());
+        var errored = false;
+        streamProcessors.push(coveralls()
+                .on('error', function(err){
+                    errored = true;
+                    gutil.log("coveralls failed:", err.message);
+                })
+                .on('end', function(){
+                    if(errored){
+                        process.exit(0);
+                    }
+                })
+        );
     });
 
     gulp.task('mocha', function () {
+        var errored = false;
         streamProcessors.push(mocha()
-            //.on('error', function (err) {
-            //    gutil.log("mocha failed:", err.message);
-            //})
+                .on('error', function (err) {
+                    errored = true;
+                    gutil.log("mocha failed:", err.message);
+                })
+                .on('end', function(){
+                    if(errored){
+                        process.exit(0);
+                    }
+                })
         );
         return streamProcessors;
     })
@@ -73,8 +94,8 @@
 
     gulp.task('format', function () {
         return streamProcessors.push(cover.format([
-            { reporter: 'html'},
-            { reporter: 'lcov'}
+            {reporter: 'html'},
+            {reporter: 'lcov'}
         ]));
     });
 
