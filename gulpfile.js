@@ -1,5 +1,5 @@
-(function(){
-   'use strict';
+(function () {
+    'use strict';
     var gulp = require('gulp'),
         cover = require('gulp-coverage'),
         exit = require('gulp-exit'),
@@ -10,15 +10,15 @@
         gutil = require('gulp-util'),
         streamProcessors,
         paths = {
-            src:['./index.js', './statusCodes.js'],
-            unit:['test/**/*.js']
+            src: ['./index.js', './statusCodes.js'],
+            unit: ['test/**/*.js']
         };
 
-    gulp.task('src', function(){
+    gulp.task('src', function () {
         streamProcessors = [gulp.src(paths.src)];
     });
 
-    gulp.task('unit', function(){
+    gulp.task('unit', function () {
         streamProcessors = [gulp.src(paths.unit)];
     });
 
@@ -32,7 +32,11 @@
 
 
     gulp.task('mocha', function () {
-        streamProcessors.push(mocha());
+        streamProcessors.push(mocha()
+            //.on('error', function (err) {
+            //    gutil.log("mocha failed:", err.message);
+            //})
+        );
         return streamProcessors;
     })
 
@@ -76,11 +80,11 @@
     })
 
     /************* TASKS ******************/
-    gulp.task('test',['unit', 'mocha', 'process']);
-    gulp.task('cover',['unit', 'instrument', 'mocha', 'gather', 'format', 'report','enforce' ,'process']);
-    gulp.task('doc',['src', 'docjs2md', 'process']);
+    gulp.task('test', ['unit', 'mocha', 'process']);
+    gulp.task('cover', ['unit', 'instrument', 'mocha', 'gather', 'format', 'report', 'enforce', 'process']);
+    gulp.task('doc', ['src', 'docjs2md', 'process']);
     /**************************************/
 
-    gulp.task('default',['cover'])
+    gulp.task('default', ['cover'])
 
 }())

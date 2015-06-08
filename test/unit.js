@@ -12,7 +12,13 @@
             statusCodes = require('../statusCodes'),
             express = require('express'),
             request,
-            app;
+            app,
+            redirect = {
+                movedPermanently:'http://www.google.com',
+                found:'http://www.google.com',
+                seeOther:'http://www.google.com'
+            };
+
 
         chai.use(chaiHttp);
         chai.request.addPromises(Promise);
@@ -23,12 +29,13 @@
         })
 
         Object.keys(statusCodes).forEach(function (status) {
-            it("should respond with a status code of " + statusCodes[status].code + ' when response property ' + status + 'is called', function () {
+            it("should respond with a status code of " + statusCodes[status].code + ' when response property ' + status + ' is called', function () {
                 app.get('/', function (req, res) {
                     res[status]().send(statusCodes[status].message);
                 })
 
                 return request.get('/')
+                    .redirects(0)
                     .then(function (res) {
                         expect(res).to.have.status(codes[status])
                     })

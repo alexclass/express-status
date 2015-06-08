@@ -38,6 +38,27 @@ Exports an object with status codes and extends the express request object by ad
 ```javascriptvar statusCodes = require()```
 
 * [express-status](#module_express-status)
+  * [.switchingProtocols()](#module_express-status.switchingProtocols)
+  * [.processing()](#module_express-status.processing)
+  * [.ok()](#module_express-status.ok)
+  * [.created()](#module_express-status.created)
+  * [.accepted()](#module_express-status.accepted)
+  * [.nonAuthoritative()](#module_express-status.nonAuthoritative)
+  * [.noContent()](#module_express-status.noContent)
+  * [.resetContent()](#module_express-status.resetContent)
+  * [.partialContent()](#module_express-status.partialContent)
+  * [.multiStatus()](#module_express-status.multiStatus)
+  * [.alreadyReported()](#module_express-status.alreadyReported)
+  * [.imUsed()](#module_express-status.imUsed)
+  * [.multipleChoices()](#module_express-status.multipleChoices)
+  * [.movedPermanently()](#module_express-status.movedPermanently)
+  * [.found()](#module_express-status.found)
+  * [.seeOther()](#module_express-status.seeOther)
+  * [.notModified()](#module_express-status.notModified)
+  * [.useProxy()](#module_express-status.useProxy)
+  * [.switchProxy()](#module_express-status.switchProxy)
+  * [.temporaryRedirect()](#module_express-status.temporaryRedirect)
+  * [.permanentRedirect()](#module_express-status.permanentRedirect)
   * [.badRequest()](#module_express-status.badRequest)
   * [.unauthorized()](#module_express-status.unauthorized)
   * [.forbidden()](#module_express-status.forbidden)
@@ -77,6 +98,153 @@ Exports an object with status codes and extends the express request object by ad
   * [.notExtended()](#module_express-status.notExtended)
   * [.networkAuthenticationRequired()](#module_express-status.networkAuthenticationRequired)
 
+<a name="module_express-status.switchingProtocols"></a>
+### express-status.switchingProtocols()
+sets res status code to 101
+
+**Kind**: static method of <code>[express-status](#module_express-status)</code>  
+**Example**  
+```javascriptfunction(req, res){ res.switchingProtocols().end();}```
+<a name="module_express-status.processing"></a>
+### express-status.processing()
+sets res status code to 102
+
+**Kind**: static method of <code>[express-status](#module_express-status)</code>  
+**Example**  
+```javascriptfunction(req, res){ res.processing().end();}```
+<a name="module_express-status.ok"></a>
+### express-status.ok()
+sets res status code to 200
+
+**Kind**: static method of <code>[express-status](#module_express-status)</code>  
+**Example**  
+```javascriptfunction(req, res){ res.ok().end();}```
+<a name="module_express-status.created"></a>
+### express-status.created()
+sets res status code to 201
+
+**Kind**: static method of <code>[express-status](#module_express-status)</code>  
+**Example**  
+```javascriptfunction(req, res){ res.created().end();}```
+<a name="module_express-status.accepted"></a>
+### express-status.accepted()
+sets res status code to 202
+
+**Kind**: static method of <code>[express-status](#module_express-status)</code>  
+**Example**  
+```javascriptfunction(req, res){ res.accepted().end();}```
+<a name="module_express-status.nonAuthoritative"></a>
+### express-status.nonAuthoritative()
+sets res status code to 203
+
+**Kind**: static method of <code>[express-status](#module_express-status)</code>  
+**Example**  
+```javascriptfunction(req, res){ res.nonAuthoritative().end();}```
+<a name="module_express-status.noContent"></a>
+### express-status.noContent()
+sets res status code to 204
+
+**Kind**: static method of <code>[express-status](#module_express-status)</code>  
+**Example**  
+```javascriptfunction(req, res){ res.noContent().end();}```
+<a name="module_express-status.resetContent"></a>
+### express-status.resetContent()
+sets res status code to 205
+
+**Kind**: static method of <code>[express-status](#module_express-status)</code>  
+**Example**  
+```javascriptfunction(req, res){ res.resetContent().end();}```
+<a name="module_express-status.partialContent"></a>
+### express-status.partialContent()
+sets res status code to 206
+
+**Kind**: static method of <code>[express-status](#module_express-status)</code>  
+**Example**  
+```javascriptfunction(req, res){ res.partialContent().end();}```
+<a name="module_express-status.multiStatus"></a>
+### express-status.multiStatus()
+sets res status code to 207
+
+**Kind**: static method of <code>[express-status](#module_express-status)</code>  
+**Example**  
+```javascriptfunction(req, res){ res.multiStatus().end();}```
+<a name="module_express-status.alreadyReported"></a>
+### express-status.alreadyReported()
+sets res status code to 208
+
+**Kind**: static method of <code>[express-status](#module_express-status)</code>  
+**Example**  
+```javascriptfunction(req, res){ res.alreadyReported().end();}```
+<a name="module_express-status.imUsed"></a>
+### express-status.imUsed()
+sets res status code to 226
+
+**Kind**: static method of <code>[express-status](#module_express-status)</code>  
+**Example**  
+```javascriptfunction(req, res){ res.imUsed().end();}```
+<a name="module_express-status.multipleChoices"></a>
+### express-status.multipleChoices()
+sets res status code to 300
+
+**Kind**: static method of <code>[express-status](#module_express-status)</code>  
+**Example**  
+```javascriptfunction(req, res){ res.multipleChoices().end();}```
+<a name="module_express-status.movedPermanently"></a>
+### express-status.movedPermanently()
+sets res status code to 301
+
+**Kind**: static method of <code>[express-status](#module_express-status)</code>  
+**Example**  
+```javascriptfunction(req, res){ res.movedPermanently().end();}```
+<a name="module_express-status.found"></a>
+### express-status.found()
+sets res status code to 302
+
+**Kind**: static method of <code>[express-status](#module_express-status)</code>  
+**Example**  
+```javascriptfunction(req, res){ res.found().end();}```
+<a name="module_express-status.seeOther"></a>
+### express-status.seeOther()
+sets res status code to 303
+
+**Kind**: static method of <code>[express-status](#module_express-status)</code>  
+**Example**  
+```javascriptfunction(req, res){ res.seeOther().end();}```
+<a name="module_express-status.notModified"></a>
+### express-status.notModified()
+sets res status code to 304
+
+**Kind**: static method of <code>[express-status](#module_express-status)</code>  
+**Example**  
+```javascriptfunction(req, res){ res.notModified().end();}```
+<a name="module_express-status.useProxy"></a>
+### express-status.useProxy()
+sets res status code to 305
+
+**Kind**: static method of <code>[express-status](#module_express-status)</code>  
+**Example**  
+```javascriptfunction(req, res){ res.useProxy().end();}```
+<a name="module_express-status.switchProxy"></a>
+### express-status.switchProxy()
+sets res status code to 306
+
+**Kind**: static method of <code>[express-status](#module_express-status)</code>  
+**Example**  
+```javascriptfunction(req, res){ res.switchProxy().end();}```
+<a name="module_express-status.temporaryRedirect"></a>
+### express-status.temporaryRedirect()
+sets res status code to 307
+
+**Kind**: static method of <code>[express-status](#module_express-status)</code>  
+**Example**  
+```javascriptfunction(req, res){ res.temporaryRedirect().end();}```
+<a name="module_express-status.permanentRedirect"></a>
+### express-status.permanentRedirect()
+sets res status code to 308
+
+**Kind**: static method of <code>[express-status](#module_express-status)</code>  
+**Example**  
+```javascriptfunction(req, res){ res.permanentRedirect().end();}```
 <a name="module_express-status.badRequest"></a>
 ### express-status.badRequest()
 sets res status code to 400

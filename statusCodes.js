@@ -1,5 +1,381 @@
 module.exports = {
     /**
+     * sets res status code to 100
+     * @method
+     * @memberof module:express-status
+     * @example
+     * ```javascript
+     * function(req, res){
+     *  res.continue().end();
+     * }
+     * ```
+     *
+     */
+    //TODO: figure out why I am unable to test for status 100. Could it be a problem with superagent in chai-http?
+    //continue: {
+    //    //This means that the server has received the request headers, and that the client should proceed to send the body.
+    //    message: 'Continue',
+    //    code: 100
+    //},
+    /**
+     * sets res status code to 101
+     * @method
+     * @memberof module:express-status
+     * @example
+     * ```javascript
+     * function(req, res){
+     *  res.switchingProtocols().end();
+     * }
+     * ```
+     *
+     */
+    switchingProtocols: {
+        //This means the requester has asked the server to switch protocols and the server is acknowledging that it will do so.
+        message: 'Switching Protocols',
+        code: 101
+    },
+    /**
+     * sets res status code to 102
+     * @method
+     * @memberof module:express-status
+     * @example
+     * ```javascript
+     * function(req, res){
+     *  res.processing().end();
+     * }
+     * ```
+     *
+     */
+    processing: {
+        //As a WebDAV request may contain many sub-requests involving file operations, it may take a long time to complete the request. This code indicates that the server has received and is processing the request, but no response is available yet
+        message: ' Processing',
+        code: 102
+    },
+    /**
+     * sets res status code to 200
+     * @method
+     * @memberof module:express-status
+     * @example
+     * ```javascript
+     * function(req, res){
+     *  res.ok().end();
+     * }
+     * ```
+     *
+     */
+    ok: {
+        //Standard response for successful HTTP requests.
+        message: 'OK',
+        code: 200
+    },
+    /**
+     * sets res status code to 201
+     * @method
+     * @memberof module:express-status
+     * @example
+     * ```javascript
+     * function(req, res){
+     *  res.created().end();
+     * }
+     * ```
+     *
+     */
+    created: {
+        //The request has been fulfilled and resulted in a new resource being created.
+        message: 'Created',
+        code: 201
+    },
+    /**
+     * sets res status code to 202
+     * @method
+     * @memberof module:express-status
+     * @example
+     * ```javascript
+     * function(req, res){
+     *  res.accepted().end();
+     * }
+     * ```
+     *
+     */
+    accepted: {
+        //The request has been accepted for processing, but the processing has not been completed. The request might or might not eventually be acted upon, as it might be disallowed when processing actually takes place.
+        message: 'Accepted',
+        code: 202
+    },
+    /**
+     * sets res status code to 203
+     * @method
+     * @memberof module:express-status
+     * @example
+     * ```javascript
+     * function(req, res){
+     *  res.nonAuthoritative().end();
+     * }
+     * ```
+     *
+     */
+    nonAuthoritative: {
+        //The server successfully processed the request, but is returning information that may be from another source.
+        message: 'Non Authoritative',
+        code: 203
+    },
+    /**
+     * sets res status code to 204
+     * @method
+     * @memberof module:express-status
+     * @example
+     * ```javascript
+     * function(req, res){
+     *  res.noContent().end();
+     * }
+     * ```
+     *
+     */
+    noContent: {
+        //The server successfully processed the request, but is not returning any content. Usually used as a response to a successful delete request.
+        message: 'No Content',
+        code: 204
+    },
+    /**
+     * sets res status code to 205
+     * @method
+     * @memberof module:express-status
+     * @example
+     * ```javascript
+     * function(req, res){
+     *  res.resetContent().end();
+     * }
+     * ```
+     *
+     */
+    resetContent: {
+        //The server successfully processed the request, but is not returning any content. Unlike a 204 response, this response requires that the requester reset the document view.
+        message: 'Reset Content',
+        code: 205
+    },
+    /**
+     * sets res status code to 206
+     * @method
+     * @memberof module:express-status
+     * @example
+     * ```javascript
+     * function(req, res){
+     *  res.partialContent().end();
+     * }
+     * ```
+     *
+     */
+    partialContent: {
+        //The server is delivering only part of the resource (byte serving) due to a range header sent by the client. The range header is used by tools like wget to enable resuming of interrupted downloads, or split a download into multiple simultaneous streams.
+        message: 'Partial Content ',
+        code: 206
+    },
+    /**
+     * sets res status code to 207
+     * @method
+     * @memberof module:express-status
+     * @example
+     * ```javascript
+     * function(req, res){
+     *  res.multiStatus().end();
+     * }
+     * ```
+     *
+     */
+    multiStatus: {
+        //The message body that follows is an XML message and can contain a number of separate response codes, depending on how many sub-requests were made.
+        message: 'Multi Status',
+        code: 207
+    },
+    /**
+     * sets res status code to 208
+     * @method
+     * @memberof module:express-status
+     * @example
+     * ```javascript
+     * function(req, res){
+     *  res.alreadyReported().end();
+     * }
+     * ```
+     *
+     */
+    alreadyReported: {
+        //The members of a DAV binding have already been enumerated in a previous reply to this request, and are not being included again.
+        message: 'Already Reported',
+        code: 208
+    },
+    /**
+     * sets res status code to 226
+     * @method
+     * @memberof module:express-status
+     * @example
+     * ```javascript
+     * function(req, res){
+     *  res.imUsed().end();
+     * }
+     * ```
+     *
+     */
+    imUsed: {
+        //The server has fulfilled a request for the resource, and the response is a representation of the result of one or more instance-manipulations applied to the current instance.
+        message: ' IM Used',
+        code: 226
+    },
+    /**
+     * sets res status code to 300
+     * @method
+     * @memberof module:express-status
+     * @example
+     * ```javascript
+     * function(req, res){
+     *  res.multipleChoices().end();
+     * }
+     * ```
+     *
+     */
+    multipleChoices: {
+        //Indicates multiple options for the resource that the client may follow. It, for instance, could be used to present different format options for video, list files with different extensions, or word sense disambiguation.
+        message: 'Multiple Choices',
+        code: 300
+    },
+    /**
+     * sets res status code to 301
+     * @method
+     * @memberof module:express-status
+     * @example
+     * ```javascript
+     * function(req, res){
+     *  res.movedPermanently().end();
+     * }
+     * ```
+     *
+     */
+    movedPermanently: {
+        //This and all future requests should be directed to the given URI.
+        message: 'Moved Permanently',
+        code: 301
+    },
+    /**
+     * sets res status code to 302
+     * @method
+     * @memberof module:express-status
+     * @example
+     * ```javascript
+     * function(req, res){
+     *  res.found().end();
+     * }
+     * ```
+     *
+     */
+    found: {
+        //This is an example of industry practice contradicting the standard. The HTTP/1.0 specification (RFC 1945) required the client to perform a temporary redirect (the original describing phrase was "Moved Temporarily"), but popular browsers implemented 302 with the functionality of a 303 See Other. Therefore, HTTP/1.1 added status codes 303 and 307 to distinguish between the two behaviours. However, some Web applications and frameworks use the 302 status code as if it were the 303.
+        message: 'Found',
+        code: 302
+    },
+    /**
+     * sets res status code to 303
+     * @method
+     * @memberof module:express-status
+     * @example
+     * ```javascript
+     * function(req, res){
+     *  res.seeOther().end();
+     * }
+     * ```
+     *
+     */
+    seeOther: {
+        //The response to the request can be found under another URI using a GET method
+        message: 'See Other',
+        code: 303
+    },
+    /**
+     * sets res status code to 304
+     * @method
+     * @memberof module:express-status
+     * @example
+     * ```javascript
+     * function(req, res){
+     *  res.notModified().end();
+     * }
+     * ```
+     *
+     */
+    notModified: {
+        //Indicates that the resource has not been modified since the version specified by the request headers If-Modified-Since or If-None-Match. This means that there is no need to retransmit the resource, since the client still has a previously-downloaded copy.
+        message: 'Not Modified',
+        code: 304
+    },
+    /**
+     * sets res status code to 305
+     * @method
+     * @memberof module:express-status
+     * @example
+     * ```javascript
+     * function(req, res){
+     *  res.useProxy().end();
+     * }
+     * ```
+     *
+     */
+    useProxy: {
+        //The requested resource is only available through a proxy, whose address is provided in the response. Many HTTP clients (such as Mozilla and Internet Explorer) do not correctly handle responses with this status code, primarily for security reasons.
+        message: 'Use Proxy',
+        code: 305
+    },
+    /**
+     * sets res status code to 306
+     * @method
+     * @memberof module:express-status
+     * @example
+     * ```javascript
+     * function(req, res){
+     *  res.switchProxy().end();
+     * }
+     * ```
+     *
+     */
+    switchProxy: {
+        //No longer used. Originally meant "Subsequent requests should use the specified proxy."
+        message: 'Switch Proxy',
+        code: 306
+    },
+    /**
+     * sets res status code to 307
+     * @method
+     * @memberof module:express-status
+     * @example
+     * ```javascript
+     * function(req, res){
+     *  res.temporaryRedirect().end();
+     * }
+     * ```
+     *
+     */
+    temporaryRedirect: {
+        //In this case, the request should be repeated with another URI; however, future requests should still use the original URI. In contrast to how 302 was historically implemented,
+        message: 'Temporary Redirect ',
+        code: 307
+    },
+    /**
+     * sets res status code to 308
+     * @method
+     * @memberof module:express-status
+     * @example
+     * ```javascript
+     * function(req, res){
+     *  res.permanentRedirect().end();
+     * }
+     * ```
+     *
+     */
+    permanentRedirect: {
+        //The request, and all future requests should be repeated using another URI. 307 and 308 (as proposed) parallel the behaviours of 302 and 301, but do not allow the HTTP method to change.
+        message: ' Permanent Redirect',
+        code: 308
+    },
+
+    /**
      * sets res status code to 400
      * @method
      * @memberof module:express-status
