@@ -3,6 +3,7 @@
 Extends express response prototype with status codes helper methods.
 
 [![Build Status](https://travis-ci.org/RiptideCloud/express-status.svg)](https://travis-ci.org/RiptideCloud/express-status)
+[![Coverage Status](https://coveralls.io/repos/RiptideCloud/express-status/badge.svg)](https://coveralls.io/r/RiptideCloud/express-status)
 
 ## Purpose
 The purpose of this library is to remove magic numbers from your code and define the status codes in one place.
