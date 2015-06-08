@@ -2,12 +2,14 @@
 
 Extends express respons prototype with status codes
 
+[![Build Status](https://travis-ci.org/RiptideCloud/express-status.svg)](https://travis-ci.org/RiptideCloud/express-status)
+
 ## Purpose
 The purpose of this library is to remove magic numbers from your code and define the status codes in one place.
 
 ## Install
 ```bash
-
+npm install express-status
 ```
 
 ## Test
@@ -16,7 +18,7 @@ test with code coverage
 gulp
 ```
 
-test only
+unit test only
 ```bash
 gulp test
 ```
