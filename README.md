@@ -25,7 +25,7 @@ gulp test
 
 ## Document
 Documentation is managed by commenting code with [jsdoc](http://usejsdoc.org/) and editing the [template](https://github.com/RiptideCloud/express-status/blob/master/docjs2md/README.hbs).
-You can [README.md](https://github.com/RiptideCloud/express-status/blob/master/README.md) by executing
+You can regenerate the [README.md](https://github.com/RiptideCloud/express-status/blob/master/README.md) by executing
 ```bash
 gulp doc
 ```
