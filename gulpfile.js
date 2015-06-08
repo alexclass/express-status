@@ -17,9 +17,9 @@
             lcov: ['reports/coverage.lcov']
         };
 
-    //gulp.task('exit', function () {
-    //    streamProcessors.push(exit());
-    //});
+    gulp.task('exit', function () {
+        streamProcessors.push(exit());
+    });
 
     gulp.task('src', function () {
         streamProcessors = [gulp.src(paths.src)];
@@ -43,12 +43,12 @@
     gulp.task('coveralls', function () {
         var errored = false;
         streamProcessors.push(coveralls()
-                .on('error', function(err){
+                .on('error', function (err) {
                     errored = true;
                     gutil.log("coveralls failed:", err.message);
                 })
-                .on('end', function(){
-                    if(errored){
+                .on('end', function () {
+                    if (errored) {
                         process.exit(0);
                     }
                 })
@@ -62,8 +62,8 @@
                     errored = true;
                     gutil.log("mocha failed:", err.message);
                 })
-                .on('end', function(){
-                    if(errored){
+                .on('end', function () {
+                    if (errored) {
                         process.exit(0);
                     }
                 })
@@ -116,7 +116,7 @@
     /************* TASKS ******************/
     gulp.task('test', ['unit', 'mocha', 'process']);
     gulp.task('cover', ['unit', 'instrument', 'mocha', 'gather', 'format', 'report', 'enforce', 'process'], function () {
-        return runSequence(['lcov', 'coveralls', 'process']);
+        return runSequence(['lcov', 'coveralls', 'exit', 'process']);
     });
     gulp.task('doc', ['src', 'docjs2md', 'process']);
     /**************************************/
