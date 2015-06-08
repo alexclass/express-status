@@ -1,6 +1,6 @@
 {
   "name": "express-status",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "status code response helper",
   "main": "index.js",
   "scripts": {
