@@ -15,7 +15,7 @@
   ],
   "author": "https://github.com/Jhorlin",
   "license": "ISC",
-  "peerDependencies":{
+  "peerDependencies": {
     "express": "^4.12.4"
   },
   "devDependencies": {
@@ -27,6 +27,7 @@
     "gulp": "^3.9.0",
     "gulp-concat": "^2.5.2",
     "gulp-coverage": "^0.3.36",
+    "gulp-coveralls": "^0.1.4",
     "gulp-exit": "0.0.2",
     "gulp-jsdoc-to-markdown": "^1.1.1",
     "gulp-mocha": "^2.1.1",

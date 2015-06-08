@@ -6,6 +6,7 @@
         mocha = require('gulp-mocha'),
         docjs2md = require('gulp-jsdoc-to-markdown'),
         concat = require('gulp-concat'),
+        coveralls = require('gulp-coveralls'),
         fs = require('fs'),
         gutil = require('gulp-util'),
         streamProcessors,
@@ -30,6 +31,9 @@
         }, stream);
     });
 
+    gulp.task('coveralls', function(){
+       streamProcessors.push(coveralls());
+    });
 
     gulp.task('mocha', function () {
         streamProcessors.push(mocha()
@@ -81,7 +85,7 @@
 
     /************* TASKS ******************/
     gulp.task('test', ['unit', 'mocha', 'process']);
-    gulp.task('cover', ['unit', 'instrument', 'mocha', 'gather', 'format', 'report', 'enforce', 'process']);
+    gulp.task('cover', ['unit', 'instrument', 'mocha', 'gather', 'format', 'report', 'enforce', 'coveralls' ,'process']);
     gulp.task('doc', ['src', 'docjs2md', 'process']);
     /**************************************/
 
