@@ -77,8 +77,10 @@
 
     /************* TASKS ******************/
     gulp.task('test',['unit', 'mocha', 'process']);
-    gulp.task('conver',['unit', 'instrument', 'mocha', 'gather', 'format', 'report','enforce' ,'process']);
+    gulp.task('cover',['unit', 'instrument', 'mocha', 'gather', 'format', 'report','enforce' ,'process']);
     gulp.task('doc',['src', 'docjs2md', 'process']);
     /**************************************/
+
+    gulp.task('default',['cover'])
 
 }())
