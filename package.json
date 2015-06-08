@@ -1,6 +1,6 @@
 {
   "name": "express-status",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "status code response helper",
   "main": "index.js",
   "scripts": {
@@ -15,6 +15,9 @@
   ],
   "author": "https://github.com/Jhorlin",
   "license": "ISC",
+  "peerDependencies":{
+    "express": "^4.12.4"
+  },
   "devDependencies": {
     "bluebird": "^2.9.27",
     "chai": "^3.0.0",
