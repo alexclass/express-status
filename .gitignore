@@ -1,0 +1,5 @@
+.coverrun
+node_modules
+.idea
+.coverdata
+reports
