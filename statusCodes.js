@@ -1,5 +1,6 @@
 module.exports = {
     /**
+     * sets res status code to 400
      * @method
      * @memberof module:express-status
      * @example
@@ -16,6 +17,7 @@ module.exports = {
         code: 400
     },
     /**
+     * sets res status code to 401
      * @method
      * @memberof module:express-status
      * @example
@@ -32,6 +34,7 @@ module.exports = {
         code: 401
     },
     /**
+     * sets res status code to 403
      * @method
      * @memberof module:express-status
      * @example
@@ -48,6 +51,7 @@ module.exports = {
         code: 403
     },
     /**
+     * sets res status code to 404
      * @method
      * @memberof module:express-status
      * @example
@@ -64,6 +68,7 @@ module.exports = {
         code: 404
     },
     /**
+     * sets res status code to 405
      * @method
      * @memberof module:express-status
      * @example
@@ -80,6 +85,7 @@ module.exports = {
         code: 405
     },
     /**
+     * sets res status code to 406
      * @method
      * @memberof module:express-status
      * @example
@@ -96,6 +102,7 @@ module.exports = {
         code: 406
     },
     /**
+     * sets res status code to 407
      * @method
      * @memberof module:express-status
      * @example
@@ -112,6 +119,7 @@ module.exports = {
         code: 407
     },
     /**
+     * sets res status code to 408
      * @method
      * @memberof module:express-status
      * @example
@@ -128,6 +136,7 @@ module.exports = {
         code: 408
     },
     /**
+     * sets res status code to 409
      * @method
      * @memberof module:express-status
      * @example
@@ -144,6 +153,7 @@ module.exports = {
         code: 409
     },
     /**
+     * sets res status code to 410
      * @method
      * @memberof module:express-status
      * @example
@@ -160,6 +170,7 @@ module.exports = {
         code: 410
     },
     /**
+     * sets res status code to 411
      * @method
      * @memberof module:express-status
      * @example
@@ -176,6 +187,7 @@ module.exports = {
         code: 411
     },
     /**
+     * sets res status code to 412
      * @method
      * @memberof module:express-status
      * @example
@@ -192,6 +204,7 @@ module.exports = {
         code: 412
     },
     /**
+     * sets res status code to 413
      * @method
      * @memberof module:express-status
      * @example
@@ -208,6 +221,7 @@ module.exports = {
         code: 413
     },
     /**
+     * sets res status code to 414
      * @method
      * @memberof module:express-status
      * @example
@@ -224,6 +238,7 @@ module.exports = {
         code: 414
     },
     /**
+     * sets res status code to 415
      * @method
      * @memberof module:express-status
      * @example
@@ -240,6 +255,7 @@ module.exports = {
         code: 415
     },
     /**
+     * sets res status code to 416
      * @method
      * @memberof module:express-status
      * @example
@@ -256,6 +272,7 @@ module.exports = {
         code: 416
     },
     /**
+     * sets res status code to 417
      * @method
      * @memberof module:express-status
      * @example
@@ -272,6 +289,7 @@ module.exports = {
         code: 417
     },
     /**
+     * sets res status code to 418
      * @method
      * @memberof module:express-status
      * @example
@@ -288,6 +306,7 @@ module.exports = {
         code: 418
     },
     /**
+     * sets res status code to 419
      * @method
      * @memberof module:express-status
      * @example
@@ -304,6 +323,7 @@ module.exports = {
         code: 419
     },
     /**
+     * sets res status code to 423
      * @method
      * @memberof module:express-status
      * @example
@@ -320,6 +340,7 @@ module.exports = {
         code: 423
     },
     /**
+     * sets res status code to 424
      * @method
      * @memberof module:express-status
      * @example
@@ -336,6 +357,7 @@ module.exports = {
         code: 424
     },
     /**
+     * sets res status code to 426
      * @method
      * @memberof module:express-status
      * @example
@@ -352,6 +374,7 @@ module.exports = {
         code: 426
     },
     /**
+     * sets res status code to 428
      * @method
      * @memberof module:express-status
      * @example
@@ -368,6 +391,7 @@ module.exports = {
         code: 428
     },
     /**
+     * sets res status code to 429
      * @method
      * @memberof module:express-status
      * @example
@@ -384,6 +408,7 @@ module.exports = {
         code: 429
     },
     /**
+     * sets res status code to 431
      * @method
      * @memberof module:express-status
      * @example
@@ -400,6 +425,7 @@ module.exports = {
         code: 431
     },
     /**
+     * sets res status code to 440
      * @method
      * @memberof module:express-status
      * @example
@@ -416,6 +442,7 @@ module.exports = {
         code: 440
     },
     /**
+     * sets res status code to 451
      * @method
      * @memberof module:express-status
      * @example
@@ -432,6 +459,7 @@ module.exports = {
         code: 451
     },
     /**
+     * sets res status code to 500
      * @method
      * @memberof module:express-status
      * @example
@@ -448,6 +476,7 @@ module.exports = {
         code: 500
     },
     /**
+     * sets res status code to 501
      * @method
      * @memberof module:express-status
      * @example
@@ -464,6 +493,7 @@ module.exports = {
         code: 501
     },
     /**
+     * sets res status code to 502
      * @method
      * @memberof module:express-status
      * @example
@@ -480,6 +510,7 @@ module.exports = {
         code: 502
     },
     /**
+     * sets res status code to 503
      * @method
      * @memberof module:express-status
      * @example
@@ -496,6 +527,7 @@ module.exports = {
         code: 503
     },
     /**
+     * sets res status code to 504
      * @method
      * @memberof module:express-status
      * @example
@@ -512,6 +544,7 @@ module.exports = {
         code: 504
     },
     /**
+     * sets res status code to 505
      * @method
      * @memberof module:express-status
      * @example
@@ -528,6 +561,7 @@ module.exports = {
         code: 505
     },
     /**
+     * sets res status code to 506
      * @method
      * @memberof module:express-status
      * @example
@@ -544,6 +578,7 @@ module.exports = {
         code: 506
     },
     /**
+     * sets res status code to 507
      * @method
      * @memberof module:express-status
      * @example
@@ -560,6 +595,7 @@ module.exports = {
         code: 507
     },
     /**
+     * sets res status code to 508
      * @method
      * @memberof module:express-status
      * @example
@@ -576,6 +612,7 @@ module.exports = {
         code: 508
     },
     /**
+     * sets res status code to 510
      * @method
      * @memberof module:express-status
      * @example
@@ -592,6 +629,7 @@ module.exports = {
         code: 510
     },
     /**
+     * sets res status code to 511
      * @method
      * @memberof module:express-status
      * @example
