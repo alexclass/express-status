@@ -43,9 +43,7 @@
                     gutil.log("coveralls failed:", err.message);
                 })
                 .on('end', function () {
-                    if (errored) {
-                        process.exit(0);
-                    }
+                    process.exit(0);
                 })
         );
     });
