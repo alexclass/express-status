@@ -2,6 +2,7 @@
     'use strict';
     var gulp = require('gulp'),
         cover = require('gulp-coverage'),
+        exit = require('gulp-exit'),
         mocha = require('gulp-mocha'),
         docjs2md = require('gulp-jsdoc-to-markdown'),
         concat = require('gulp-concat'),
@@ -15,6 +16,10 @@
             unit: ['test/**/*.js'],
             lcov: ['reports/coverage.lcov']
         };
+
+    gulp.task('exit', function () {
+        streamProcessors.push(exit());
+    });
 
     gulp.task('src', function () {
         streamProcessors = [gulp.src(paths.src)];
@@ -43,7 +48,9 @@
                     gutil.log("coveralls failed:", err.message);
                 })
                 .on('end', function () {
-                    process.exit(0);
+                    if (errored) {
+                        process.exit(0);
+                    }
                 })
         );
     });
@@ -109,7 +116,7 @@
     /************* TASKS ******************/
     gulp.task('test', ['unit', 'mocha', 'process']);
     gulp.task('cover', ['unit', 'instrument', 'mocha', 'gather', 'format', 'report', 'enforce', 'process'], function () {
-        return runSequence(['lcov', 'coveralls', 'process']);
+        return runSequence(['lcov', 'coveralls','exit','process']);
     });
     gulp.task('doc', ['src', 'docjs2md', 'process']);
     /**************************************/
