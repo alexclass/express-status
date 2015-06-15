@@ -138,7 +138,7 @@
     /**********/
 
     gulp.task('default', ['cover', 'quality', 'secure', 'style'], function () {
-        return runSequence['track'];
+        return runSequence(['track']);
     })
 
 }())
