@@ -35,6 +35,4 @@ gulp doc
 Exports an object with status codes and extends the express request object by adding a method that will set the status code and return the request object.
 
 **Example**  
-```javascript
-var statusCodes = require()
-```
+```javascriptvar statusCodes = require()```

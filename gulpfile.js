@@ -6,7 +6,7 @@
     var gulp = require('gulp'),
         path = require('path'),
         nock = require('nock'),
-        sequence = require('run-sequence').use(gulp),
+        runSequence = require('run-sequence').use(gulp),
         coveralls = require('gulp-coveralls'),
         cover = require('gulp-coverage'),
         jshint = require('gulp-jshint'),
@@ -20,7 +20,6 @@
         buddy = require('gulp-buddy.js'),
         concat = require('gulp-concat'),
         expect = require('gulp-expect-file'),
-        runSequence = require('run-sequence'),
         paths = {
             src: ['lib/**/*.js', 'index.js'],
             unit: 'test/**/*.js',
