@@ -19,6 +19,7 @@
         mocha = require('gulp-mocha'),
         buddy = require('gulp-buddy.js'),
         concat = require('gulp-concat'),
+        expect = require('gulp-expect-file'),
         runSequence = require('run-sequence'),
         paths = {
             src: ['lib/**/*.js', 'index.js'],
@@ -111,6 +112,8 @@
 
     gulp.task('lcov', function () {
         streamProcessors = [gulp.src(paths.lcov)];
+        // coveralls doesn't check that the file exists so we want to check that it does
+        streamProcessors.push(expect(paths.lcov));
     });
 
     gulp.task('docjs2md', function () {
