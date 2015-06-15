@@ -3,8 +3,7 @@
 Extends express response prototype with status codes helper methods.
 
 [![Build Status](https://travis-ci.org/RiptideCloud/express-status.svg)](https://travis-ci.org/RiptideCloud/express-status)
-[![Coverage Status](https://coveralls.io/repos/RiptideCloud/express-status/badge.svg?branch=master)](https://coveralls.io/r/RiptideCloud/express-status?branch=master)
-
+[![Coverage Status](https://coveralls.io/repos/RiptideCloud/express-status/badge.svg)](https://coveralls.io/r/RiptideCloud/express-status)
 ## Purpose
 The purpose of this library is to remove magic numbers from your code and define the status codes in one place.
 
@@ -36,4 +35,6 @@ gulp doc
 Exports an object with status codes and extends the express request object by adding a method that will set the status code and return the request object.
 
 **Example**  
-```javascriptvar statusCodes = require()```
+```javascript
+var statusCodes = require()
+```
