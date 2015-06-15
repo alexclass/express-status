@@ -8,6 +8,8 @@
  */
 
 (function (module) {
+    'use strict';
+
     var express,
         responsePrototype,
         statusCodes = require('./statusCodes.js');
@@ -18,15 +20,15 @@
         throw new Error('express-status required express: please npm install express. ' + e.message);
     }
 
-    Object.keys(statusCodes).forEach(function(status){
-        Object.defineProperty(module.exports, status,{
-            value:statusCodes[status].code
-        })
+    Object.keys(statusCodes).forEach(function (status) {
+        Object.defineProperty(module.exports, status, {
+            value: statusCodes[status].code
+        });
 
-        responsePrototype[status] = function(){
-          return this.status(statusCodes[status].code);
+        responsePrototype[status] = function () {
+            return this.status(statusCodes[status].code);
         };
 
-    })
+    });
 
-}(module))
+}(module));
