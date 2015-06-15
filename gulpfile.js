@@ -119,7 +119,7 @@
         streamProcessors.push(gulp.dest("."));
     })
 
-    gulp.task('report', ['lcov', 'coveralls', 'process'])
+    gulp.task('track', ['lcov', 'coveralls', 'process'])
 
     /** tasks **/
 
@@ -138,7 +138,7 @@
     /**********/
 
     gulp.task('default', ['cover', 'quality', 'secure', 'style'], function () {
-        return runSequence['report'];
+        return runSequence['track'];
     })
 
 }())
