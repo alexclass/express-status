@@ -3,7 +3,6 @@ sudo: false # Use container boxes for tests
 node_js:
   - "0.12"
   - "0.11"
-  - "0.10"
   - "iojs"
 script: npm test
 matrix:

@@ -5,40 +5,31 @@
     'use strict';
     describe('test express response objects are extended with the status code', function () {
         var codes = require('../index'),
-            chai = require('chai'),
-            chaiHttp = require('chai-http'),
-            Promise = require('bluebird'),
-            expect = chai.expect,
+            supertest = require('supertest'),
             statusCodes = require('../statusCodes'),
             express = require('express'),
             request,
-            app,
-            redirect = {
-                movedPermanently:'http://www.google.com',
-                found:'http://www.google.com',
-                seeOther:'http://www.google.com'
-            };
-
-
-        chai.use(chaiHttp);
-        chai.request.addPromises(Promise);
+            app;
 
         beforeEach(function () {
             app = express()
-            request = chai.request(app);
+            request = supertest(app);
+        })
+
+        afterEach(function(done){
+           return request.destroy(done);
         })
 
         Object.keys(statusCodes).forEach(function (status) {
-            it("should respond with a status code of " + statusCodes[status].code + ' when response property ' + status + ' is called', function () {
+            it("should respond with a status code of " + statusCodes[status].code + ' when response property ' + status + ' is called', function (done) {
                 app.get('/', function (req, res) {
                     res[status]().send(statusCodes[status].message);
                 })
 
                 return request.get('/')
                     .redirects(0)
-                    .then(function (res) {
-                        expect(res).to.have.status(codes[status])
-                    })
+                    .expect(codes[status])
+                    .end(done)
             })
         });
     })
