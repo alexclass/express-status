@@ -82,11 +82,11 @@
         )
     });
 
-    gulp.task('format', function () {
-        streamProcessors.push(cover.format());
+    gulp.task('report', function () {
+        streamProcessors.push(gulp.dest('reports'));
     });
 
-    gulp.task('report', function () {
+    gulp.task('format', function () {
         streamProcessors.push(cover.format([
             {reporter: 'html'},
             {reporter: 'lcov'}
@@ -135,7 +135,7 @@
 
     gulp.task('style', ['src', 'jshint', 'jscs', 'process']);
 
-    gulp.task('cover', ['unit', 'instrument', 'mocha', 'gather', 'enforce', 'format', 'report', 'process']);
+    gulp.task('cover', ['unit', 'instrument', 'mocha', 'gather', 'format', 'report', 'enforce', 'process']);
 
     /**********/
 
