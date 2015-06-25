@@ -1,6 +1,6 @@
 {
   "name": "express-status",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "status code response helper",
   "main": "index.js",
   "scripts": {
@@ -45,5 +45,16 @@
     "supertest": "^1.0.1",
     "supertest-as-promised": "^2.0.1"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RiptideCloud/express-status.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RiptideCloud/express-status/issues"
+  },
+  "homepage": "https://github.com/RiptideCloud/express-status#readme"
 }
