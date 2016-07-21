@@ -17,7 +17,6 @@
         docjs2md = require('gulp-jsdoc-to-markdown'),
         fs = require('fs'),
         mocha = require('gulp-mocha'),
-        buddy = require('gulp-buddy.js'),
         concat = require('gulp-concat'),
         expect = require('gulp-expect-file'),
         paths = {
@@ -53,10 +52,6 @@
 
     gulp.task('jsinspect', function () {
         streamProcessors.push(jsinspect());
-    });
-
-    gulp.task('buddy', function () {
-        streamProcessors.push(buddy())
     });
 
     gulp.task('jshint', function () {
@@ -101,7 +96,7 @@
 
     gulp.task('nsp', function (done) {
         nsp({
-            path: './package.json'
+            package: __dirname + '/package.json'
         }, done);
     });
 
@@ -127,7 +122,7 @@
 
     gulp.task('test', ['unit', 'mocha', 'process'])
 
-    gulp.task('quality', ['src', 'buddy', 'jsinspect', 'process'])
+    gulp.task('quality', ['src', 'jsinspect', 'process'])
 
     gulp.task('secure', ['nsp']);
 
