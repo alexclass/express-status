@@ -42,7 +42,7 @@
     "jshint-stylish": "^2.0.0",
     "mocha": "^3.0.0",
     "nock": "^2.5.0",
-    "run-sequence": "^1.1.0",
+    "run-sequence": "^1.2.2",
     "supertest": "^2.0.0",
     "supertest-as-promised": "^2.0.1"
   },
