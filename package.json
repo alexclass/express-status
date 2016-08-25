@@ -20,7 +20,7 @@
     "express": "^4.12.4"
   },
   "devDependencies": {
-    "bluebird": "^2.9.27",
+    "bluebird": "^3.4.3",
     "buddy.js": "^0.9.2",
     "chai": "^3.0.0",
     "chai-as-promised": "^5.1.0",
